@@ -1,0 +1,26 @@
+file=$1;
+if [ -z "$file" ]; then
+    echo "Usage: starttex [filename]";
+    NOW=$(date +%Y%m%d)
+    tex=".tex"
+    file=$NOW$tex
+    echo "Filename was set to '$file'"
+fi
+echo "%$file" > $file;
+echo "\documentclass[a4paper,12pt]{article}" >> $file;
+echo "\usepackage[utf8]{inputenc}" >> $file;
+echo "\usepackage[english,russian]{babel}" >> $file;
+echo "\usepackage{a4wide}" >> $file;
+echo "\usepackage{mathtext}" >> $file;
+echo "\usepackage{amsbsy}" >> $file;
+echo "\usepackage{amsthm}" >> $file;
+echo "\usepackage{amsmath}" >> $file;
+echo "\usepackage{amssymb}" >> $file;
+echo "\usepackage{amsfonts}" >> $file;
+echo "\usepackage{tikz}" >> $file;
+echo "\usepackage{verbatim}" >> $file;
+echo "\usepackage{graphicx}" >> $file;
+echo " " >> $file;
+echo "\begin{document}" >> $file;
+echo " " >> $file;
+echo "\end{document}" >> $file;
